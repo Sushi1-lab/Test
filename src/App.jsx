@@ -58,7 +58,7 @@ function App() {
              <DiCssTricks/>
             </motion.div>
 
-            <img src="https://imgur.com/a/e9SNE5q" className='absolute w-120 h-70 top-70 right-10 z-10 shadow-lg shadow-gray-900 rounded-2xl'/>
+            <img src="src/assets/pic.jpg" className='absolute w-120 h-70 top-70 right-10 z-10 shadow-lg shadow-gray-900 rounded-2xl'/>
             <div class="w-0 h-0 border-l-[600px] border-l-transparent border-r-[600px] border-r-transparent border-b-[730px] border-b-blue-950 absolute top-10 right-[-600px]"></div>
             <ul className='text-5xl flex justify-center space-x-5 absolute top-170 right-30 'style={{ color: "oklch(0.973 0.071 103.193)" }}>
               <li><a href="https://www.facebook.com/bakus.abnuy/"><FaFacebook/></a></li>
