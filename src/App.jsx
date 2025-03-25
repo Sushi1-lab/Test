@@ -2,7 +2,10 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from "framer-motion";
 import { DiCssTricks } from "react-icons/di";
 import { FaFacebook, FaGithub, FaLinkedin, FaInstagram} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { ChartContainer } from '@mui/x-charts/ChartContainer';
+import { BarPlot } from '@mui/x-charts/BarChart';
+import { duration } from '@mui/material';
+
 
 
 function App() {
@@ -14,6 +17,16 @@ function App() {
   const is3InView = useInView(ref3, { once: false });
   const ref4 = useRef(null);
   const is4InView = useInView(ref4, { once: false });
+  const uData = [4000, 3000, 2000, 3000, 4500, 1000];
+  const xLabels = [
+    'C#',
+    'Java',
+    'Python',
+    'Javascript',
+    'PHP',
+    'C++',
+  ];
+
   
 
   return (
@@ -57,6 +70,24 @@ function App() {
             >
              <DiCssTricks/>
             </motion.div>
+
+            <div className='absolute top-80 left-13 '>
+            <ChartContainer
+                width={650}
+                height={340}
+                series={[{ data: uData, label: 'uv', type: 'bar', color: "oklch(0.359 0.144 278.697)" }]}
+                xAxis={[{ scaleType: 'band', data: xLabels }]}
+            >
+                <BarPlot />
+           </ChartContainer>
+            </div>
+            <div className='absolute top-155 left-35 font-mono text-lg'>
+            <ul className='flex gap-x-10'>
+                {xLabels.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul> 
+            </div>
 
             <img src="https://i.imgur.com/kmfxbDt.jpg" className='absolute w-120 h-70 top-70 right-10 z-10 shadow-lg shadow-gray-900 rounded-2xl'/>
             <div class="w-0 h-0 border-l-[600px] border-l-transparent border-r-[600px] border-r-transparent border-b-[730px] border-b-blue-950 absolute top-10 right-[-600px]"></div>
